@@ -1,0 +1,15 @@
+# encoding=utf-8
+import jieba
+#seg_list = jieba.cut("海，是佔地球表面積70.8%的鹹水。[1]海洋調節著地球的氣候並在水循環、碳循環、氮循環發揮了中的極其重要的作用。儘管人類從史前時期就開始在大海中旅行並探索未知的海域，但現代海洋學研究始於19世紀70年代英國的挑戰者號遠征。[2]海通常被劃分為四個或五個大的部分，如太平洋，被稱為大洋，而較小的部分，如地中海，被稱為海。由於大陸漂移，現今北半球幾乎是被陸地和海洋平分（約2：3的比例），而南半球多是海洋 （約1：4.7的比例）。[3] 開闊海域的海水鹽分約為3.5%，不同的水域鹽分有所不同。海水的固體組成約為85%為鈉和氯。深海的洋流是由鹽度和溫度的差異而產生，海面的洋流是海浪間的摩擦而產生，但這些都被陸地和地球自轉所影響（科里奧利力）。以往海平面的變化留下了大陸棚，也就是靠近陸地，海水深度較淺的區域。此區域的海水有豐富的養份，因此可以滋養海洋生物，也是人類食物的來源之一，稱為海鮮。海鮮主要以魚為主，也包括貝類、海洋哺乳動物及海藻，可能是捕獲的，也可能是人工養殖。在熱帶珊瑚礁附近的海域是多樣性最高的區域。以往常在海上捕鯨，但鯨魚的數量減少，因此訂定了《國際捕鯨公約》，並且成立國際捕鯨委員會，自1986年起暫停大部份的商業捕鯨行為。海洋中的生物不都生長在陽光照射的到的水域，甚至在海底深處，壓力很大的超深淵帶也有生物，其營養來源來自深海熱泉，形成獨特的生態系統，這類生物稱為嗜極生物。在無生源論中，生命起源可能是來自海洋，海洋微生物墊符合地球大氣的大氧化事件，而動物及植物的起源也都來自海上。", cut_all=False)
+
+#seg_eng_list = jieba.cut("Owing to the present state of continental drift, the Northern Hemisphere is now fairly equally divided between land and sea (a ratio of about 2:3) but the South is overwhelmingly oceanic (1:4.7).[6] Salinity in the open ocean is generally in a narrow band around 3.5% by mass, although this can vary in more landlocked waters, near the mouths of large rivers, or at great depths. About 85% of the solids in the open sea are sodium chloride. Deep-sea currents are produced by differences in salinity and temperature. Surface currents are formed by the friction of waves produced by the wind and by tides, the changes in local sea level produced by the gravity of the Moon and Sun. The direction of all of these is governed by surface and submarine land masses and by the rotation of the Earth (the Coriolis effect).",cut_all=False)
+
+
+#seg_list = jieba.cut("#社会$让我们看看更有趣的统计数据。$根据语言专家和首席执行官 Ryan Mcmun n 的说法，学习第二语言会使你的薪水从10%到15%不等。$他说娱乐鲑鱼的旅游潜力在很大程度上没有得到利用。$你的做法越多，你就越好，使你更容易学习新的信息。$我们对每一个环境都有不同的反应，对于更好的或更坏的。$#政治：$该装置后来被发现是间谍设备制造和使用的海外机构收集数据， 根据官方发布。$国家安全当局说， 这两个告密者获得了可观的财务回报，但金额没有透露。$近年来，中国加强了国家安全立法。$大选将按计划进行。$线人可以通过拨打热线 电话、发送信函、或访问局方来向当局传递信息。$#经济：$随着世界一些地区变得相对富裕，买方的区域分布也发生了重大变化。$会计规则受到攻击。$他们的规则，银行，迫使他们报告巨大的损失，而它只是不公平。$但银行股价低于其账面价值，表明投资者持怀疑态度。$FASB 和 IASB 可以帮助监管者创建他们想要的任何资产负债表。$#口语：$我不能帮忙。 $我不是故意的。 $我们都赞成 $那得看情况。 $多人多品味。 $#科技：$专家说，恶意软件正在以每小时500万的电子邮件速度传播。$这种病毒被设计为 “蠕虫”，这意味着它可以自动地传播到同一网络中的其他计算机。$如何保护电脑$微软已经发布了自动视窗更新来保护客户。$它通过蓝牙连接到您的电话，并有一对耳塞。", cut_all=False)
+
+seg_list = jieba.cut("社会：$让我们来看看一些更有趣的数据吧。$根据语言学家和首席执行官瑞·恩克的说法，会两门语言不论在什么地方都能让你的薪水涨10%到15%。$罗兰教授表示野生三文鱼垂钓作为旅游资源还待开发，很具潜力。$你练习的越多你就会越来越擅长，也更便于你学习新信息。$每种环境对我们的影响都是不同的，有些更好有些更坏。$$政治：$据官方公布的消息显示，有关部门随后发现该装置为国外制造和使用的间谍设备，用途是收集数据。$国家安全部门表示，两名举报人受到大额经济奖励，但未披露金额。$近年来，中国加强了国家安全立法。$大选也将于周四如期举行。$举报人可通过拨打热线电话、寄信或直接上门的方式向政府传递信息。$$经济：$随着世界上某些地区变得相对富裕起来，买家的区域分布也发生了显著的变化。$会计规则正在遭受攻击。$银行业抱怨会计规则迫使他们报告巨大损失，认为这些会计准则不公平。$但是，银行股票以低于账面价值的价格交易，这一点反应了投资者的怀疑。$FASB 和 IASB 可以帮助监管者设计出他们想要的任意的资产负债表。$$口语：$我情不自禁。$我不是故意的。$我们全都同意。$噢，这得看情况。$各有所好。$$科技：$专家表示，恶意软件正以每小时500万封电子邮件的速度扩散。$这种病毒设计采用“蠕虫”式，意味着它可以自动传播感染同一网络中的其他电脑。$用户该如何保护自己的电脑？$微软公司已经发布了Windows自动更新来保护客户电脑。$它通过蓝牙连接手机，并配有一副耳机。$",cut_all=False)
+
+print("Full Mode: " + " ".join(seg_list))  # 全模式
+#seg_list[:5]
+
+#print("Full Mode: " + " ".join(seg_eng_list))  # 全模式
