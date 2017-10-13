@@ -25,8 +25,8 @@ except:
     totoal_cpu = multiprocessing.cpu_count()
 print "TOTAL CPU :%d" % totoal_cpu
 
-SIZE = 500000
-#SIZE = 1000
+#SIZE = 500000
+SIZE = 500
 EPOCH = 1
 
 
@@ -44,7 +44,8 @@ while(True):
         line_tar = target_file_P.readline()
         source.append(line)
         target.append(line_tar)
-    if len(source) == 0:
+    print "LLEEEEEN:%d" % len(source)
+    if source == target:
         break
     for index,sen in enumerate(source):
         source[index] = (index,sen)
