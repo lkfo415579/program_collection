@@ -25,8 +25,8 @@ except:
     totoal_cpu = multiprocessing.cpu_count()
 print "TOTAL CPU :%d" % totoal_cpu
 
-#SIZE = 500000
-SIZE = 500
+SIZE = 500000
+#SIZE = 500
 EPOCH = 1
 
 
