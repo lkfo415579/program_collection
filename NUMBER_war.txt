@@ -1,3 +1,0 @@
-python pair_language_detecth.py
-sed 's/\([0-9]*\) \. \([0-9]*\)/\1\.\2/' < Bi-News-en-zh-clean.zh > Bi-News-en-zh-clean2.zh
-python corpus_preprocessor.py
