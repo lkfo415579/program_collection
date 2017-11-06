@@ -1,0 +1,9 @@
+./tools/wrap_xml.pl zh com/src.sgm GOD < ../cheat/result.avg.zh > com/hyp_avg.sgm
+python ./tools/mt-score-main.py -rs com/ref.sgm -hs com/hyp2.sgm -ss com/src.sgm --id GOD | tee score/test2.score
+
+python ./tools/mt-score-main.py -rs com/ref.sgm -hs com/same.sgm -ss com/src.sgm --id GOD | tee score/test3.score
+
+python ./tools/mt-score-main.py -rs com/ref.sgm -hs com/hyp_avg.sgm -ss com/src.sgm --id GOD | tee score/test_avg.score
+
+#BLEU score=0.2732
+#BLEU score=0.2747<-avg best4

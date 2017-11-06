@@ -1,0 +1,4 @@
+cat valid.log | grep cross-entropy | sort -g -k8,8 -t ' ' | cut -f 4 -d ' ' | head -n 12 | xargs -I {} echo model_revo_s2s.iter{}.npz
+cat valid.log | grep cross-entropy | sort -g -k8,8 -t ' ' | cut -f 4 -d ' ' | head -n 12 | xargs -I {} echo model_revo_transformer.iter{}.npz
+---
+cat valid.log | grep valid-script | sort -rg -k8,8 -t ' ' | cut -f 4 -d ' ' | head -n 12 | xargs -I {} echo model_revo_amun.iter{}.npz | xargs
