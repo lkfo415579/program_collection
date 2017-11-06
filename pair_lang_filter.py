@@ -1,12 +1,13 @@
 #!/usr/bin/env python 
 # -*- coding: utf8 -*- 
+#v1.0 revo,11/6/2017
 import sys
 
 reload(sys)
 sys.setdefaultencoding('utf-8')
 #from langdetect import detect
-import pycld2 as cld2
-
+#import pycld2 as cld2
+from polyglot.detect import Detector
 import codecs
 import time
 import os
@@ -90,8 +91,11 @@ while(True):
                 t0 = t1
                 sys.stdout.flush()
             tmp_s = sentence.decode('utf8')
+            #
+            #detected = Detector(tmp_s).language.code[:2]
+            #print detected
             try:
-                detected = cld2.detect(tmp_s).language.code[:2]
+                detected = Detector(tmp_s).language.code[:2]
                 if detected == t_lang:
                     #print "INDEX:%d,%s" % (index,sentence)
                     #print detected
