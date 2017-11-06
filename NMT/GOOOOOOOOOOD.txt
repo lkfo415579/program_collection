@@ -1,0 +1,9 @@
+mkdir newtranx_GG
+mv newtranx_package.tar.gz newtranx_GG
+cd newtranx_GG
+tar zxvsf newtranx_package.tar.gz
+mv package/* ./
+rm -rf package
+tar zxvsf Tian_Newtranx_SERVER.tar.gz
+sudo docker image load -i Tian_Newtranx_SERVER.tar
+sudo docker tag 4d3a85daffd0 newtranx_server-gpu
