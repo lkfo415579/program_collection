@@ -4,7 +4,8 @@ import sys
 
 reload(sys)
 sys.setdefaultencoding('utf-8')
-from langdetect import detect
+#from langdetect import detect
+import pycld2 as cld2
 
 import codecs
 import time
@@ -13,14 +14,16 @@ from multiprocessing import Process,Pool
 import multiprocessing
 
 if (sys.argv[1] == '-h'):
-    print "usage: python pair_lang_filter.py valid.General.en-zh.zh valid.General.en-zh.en zh en valid.output.en-zh 4"
+    print "usage: python pair_lang_filter.py valid.General.en-zh zh en valid.output.en-zh 4"
     sys.exit()
-output_s = codecs.open(sys.argv[5]+"."+sys.argv[3],"wa")
-output_t = codecs.open(sys.argv[5]+"."+sys.argv[4],"wa")
+s_lang = sys.argv[2]
+t_lang = sys.argv[3]
+output_s = codecs.open(sys.argv[4]+"."+s_lang,"wa")
+output_t = codecs.open(sys.argv[4]+"."+t_lang,"wa")
 
 try:
-    if len(sys.argv[6]) > 0:
-        totoal_cpu = int(sys.argv[6])
+    if len(sys.argv[5]) > 0:
+        totoal_cpu = int(sys.argv[5])
 except:
     totoal_cpu = multiprocessing.cpu_count()
 print "TOTAL CPU :%d" % totoal_cpu
@@ -30,8 +33,8 @@ SIZE = 500000
 EPOCH = 1
 
 
-source_file_P = codecs.open(sys.argv[1],"rb")
-target_file_P = codecs.open(sys.argv[2],"rb")
+source_file_P = codecs.open(sys.argv[1]+"."+s_lang,"rb")
+target_file_P = codecs.open(sys.argv[1]+"."+t_lang,"rb")
 
 
 while(True):
@@ -52,8 +55,7 @@ while(True):
 
     
         
-    s_lang = sys.argv[3]
-    t_lang = sys.argv[4]
+
 
     #if len(source) != len(target):
     #    assert ("FUCKED, two files are not having the same line number")
@@ -89,7 +91,7 @@ while(True):
                 sys.stdout.flush()
             tmp_s = sentence.decode('utf8')
             try:
-                detected = detect(tmp_s)[:2]
+                detected = cld2.detect(tmp_s).language.code[:2]
                 if detected == t_lang:
                     #print "INDEX:%d,%s" % (index,sentence)
                     #print detected
